@@ -18,7 +18,7 @@ def parse():
     soup = BeautifulSoup(response.content, 'html.parser')
     headlines = []
     # здесь типа должен быть код самого парсера, результат которого сохраняется в список headlines
-    # который выводиься в шаблон results.html
+    # который выводиться в шаблон results.html
         
     return render_template('results.html', headlines=headlines)
 
