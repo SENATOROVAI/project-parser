@@ -71,6 +71,8 @@ instance/
 # Sphinx documentation
 docs/_build/
 
+*.pyc
+
 # PyBuilder
 .pybuilder/
 target/
@@ -160,3 +162,4 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+app/__pycache__/__init__.cpython-311.pyc
