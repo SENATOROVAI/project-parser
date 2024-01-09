@@ -3,11 +3,12 @@ version: "3"
 services:
 
   parser:
-    build: ./
+
+    build: ../
 
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./:/parser/
-    # ports:
-    #   - 3000:3000
+      - ../:/parser/
+    ports:
+      - 8080:8080
     restart: always

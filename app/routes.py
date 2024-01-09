@@ -1,17 +1,19 @@
-from flask import Flask, render_template, request
+from app import app
+from flask import render_template, request
 import requests
 from bs4 import BeautifulSoup
 
-app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+
+    return app.render_template('index.html')
+
 
 @app.route('/parse', methods=['POST'])
 def parse():
     # Заготовка для парсера контента сайта
-    url = request.form['url']
+    url = app.request.form['url']
 
     response = requests.get(url)
 
@@ -20,8 +22,4 @@ def parse():
     # здесь типа должен быть код самого парсера, результат которого сохраняется в список headlines
     # который выводиться в шаблон results.html
         
-    return render_template('results.html', headlines=headlines)
-
-
-if __name__ == '__main__':
-    app.run(host="127.0.0.1", port=8080, debug=True)
+    return app.render_template('results.html', headlines=headlines)
