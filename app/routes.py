@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 def index() -> str:
     return app.render_template('index.html')
 
-
+ 
 @app.route('/parse', methods=['POST'])
 def parse() -> str:
     # Заготовка для парсера контента сайта
