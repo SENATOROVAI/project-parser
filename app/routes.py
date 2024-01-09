@@ -1,8 +1,8 @@
-from app import app
-
-from flask import render_template, request
+from flask import Flask, render_template, request
 import requests
 from bs4 import BeautifulSoup
+
+app = Flask(__name__)
 
 @app.route('/')
 def index() -> str:
@@ -21,6 +21,6 @@ def parse() -> str:
     headlines = []
     # здесь типа должен быть код самого парсера, результат которого сохраняется в список headlines
     # который выводиться в шаблон results.html
-        
+    return 'Типа список заголовков и все такое...'    
     return render_template('results.html', headlines=headlines)
 
