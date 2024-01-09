@@ -5,11 +5,13 @@ from bs4 import BeautifulSoup
 app = Flask(__name__)
 
 @app.route('/')
-def index():
+def index() -> str:
+
     return render_template('index.html')
 
+ 
 @app.route('/parse', methods=['POST'])
-def parse():
+def parse() -> str:
     # Заготовка для парсера контента сайта
     url = request.form['url']
 
@@ -19,9 +21,6 @@ def parse():
     headlines = []
     # здесь типа должен быть код самого парсера, результат которого сохраняется в список headlines
     # который выводиться в шаблон results.html
-        
+    return 'Типа список заголовков и все такое...'    
     return render_template('results.html', headlines=headlines)
 
-
-if __name__ == '__main__':
-    app.run(host="127.0.0.1", port=8080, debug=True)
