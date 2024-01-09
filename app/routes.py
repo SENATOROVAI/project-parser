@@ -5,13 +5,12 @@ from bs4 import BeautifulSoup
 
 
 @app.route('/')
-def index():
-
+def index() -> str:
     return app.render_template('index.html')
 
 
 @app.route('/parse', methods=['POST'])
-def parse():
+def parse() -> str:
     # Заготовка для парсера контента сайта
     url = app.request.form['url']
 
